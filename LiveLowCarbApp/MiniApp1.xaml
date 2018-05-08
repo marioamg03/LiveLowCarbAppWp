@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="LiveLowCarbApp.MiniApp1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="Img/fondo lineal.png"/>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid HorizontalAlignment="Left" Height="90" Margin="10,361,0,0" VerticalAlignment="Top" Width="433">
+            	<RadioButton x:Name="RadioButton3" Content="Low" HorizontalAlignment="Left" Height="73" Margin="6,10,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" FontSize="21.333"/>
+            	<RadioButton x:Name="RadioButton4" Content="Average" HorizontalAlignment="Left" Height="73" Margin="142,10,0,0" VerticalAlignment="Top" Width="165" FontWeight="Bold" FontSize="21.333"/>
+            	<RadioButton x:Name="RadioButton5" Content="High" HorizontalAlignment="Left" Height="70" Margin="307,13,0,0" VerticalAlignment="Top" Width="116" FontWeight="Bold" FontSize="21.333"/>
+            </Grid>
+            <Image Margin="12,452,12,217" Source="Img/botones inferiores-01.png" Stretch="Fill"/>
+            <Button x:Name="Button1" Content="Calculate" HorizontalAlignment="Left" Margin="-2,438,0,0" VerticalAlignment="Top" Click="Button1_Click" Width="305" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="26.667"/>
+            <Button x:Name="Button2" Content="Clean" HorizontalAlignment="Left" Margin="281,438,0,0" VerticalAlignment="Top" Click="Button2_Click" Width="174" BorderBrush="{x:Null}" FontWeight="Bold" FontSize="26.667"/>
+            <RadioButton x:Name="RadioButton1" Content="Men" HorizontalAlignment="Left" Margin="13,72,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="26.667"/>
+            <RadioButton x:Name="RadioButton2" Content="Female" HorizontalAlignment="Left" Margin="235,72,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="26.667"/>
+            <TextBlock x:Name="TextBlock1" HorizontalAlignment="Left" Margin="12,519,0,0" TextWrapping="Wrap" Text="BMR" VerticalAlignment="Top" Height="49" Width="432" FontSize="26.667" FontWeight="Bold"/>
+            <Image Margin="12,144,12,521" Source="Img/boton1-01.png" Stretch="Fill"/>
+            <Image Margin="12,226,12,439" Source="Img/boton2-01.png" Stretch="Fill"/>
+            <Image Margin="12,306,12,357" Source="Img/boton3-01.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Left" Height="48" Margin="66,154,0,0" TextWrapping="Wrap" Text="Weight" VerticalAlignment="Top" Width="99" FontWeight="Bold" FontSize="26.667"/>
+            <TextBlock HorizontalAlignment="Left" Height="42" Margin="66,240,0,0" TextWrapping="Wrap" Text="Height" VerticalAlignment="Top" Width="91" FontWeight="Bold" FontSize="26.667"/>
+            <TextBlock HorizontalAlignment="Left" Height="44" Margin="85,313,0,0" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top" Width="53" FontWeight="Bold" FontSize="26.667"/>
+            <TextBlock HorizontalAlignment="Left" Height="44" Margin="400,158,0,0" TextWrapping="Wrap" Text="Kg" VerticalAlignment="Top" Width="37" FontWeight="Bold" FontSize="26.667"/>
+            <TextBlock HorizontalAlignment="Left" Height="41" Margin="399,241,0,0" TextWrapping="Wrap" Text="cm" VerticalAlignment="Top" Width="44" FontSize="26.667" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlock2" HorizontalAlignment="Left" Height="145" Margin="10,568,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" FontSize="26.667" FontWeight="Bold" RenderTransformOrigin="0.533,0.433"/>
+            <Image Margin="2,-26,-2,631" Source="Img/logo app blanco-01.png" Stretch="Fill"/>
+
+        </Grid>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="76" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Margin="252,138,0,0" Grid.Row="1" InputScope="Number"/>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="76" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Margin="252,220,0,0" Grid.Row="1" InputScope="Number"/>
+        <TextBox x:Name="TextBox3" HorizontalAlignment="Left" Height="77" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Margin="252,299,0,0" Grid.Row="1" InputScope="Number"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>

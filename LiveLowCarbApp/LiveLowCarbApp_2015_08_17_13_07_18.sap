@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProfilerSession Type="ExecutionPerformanceAnalysis" Name="LiveLowCarbApp3478442443">
+  <TargetApplication Name="LiveLowCarbApp_Debug_AnyCPU" SourceProject="LiveLowCarbApp.csproj" Type="WindowsPhone">
+    <ApplicationBinary Path="Bin\Debug\LiveLowCarbApp_Debug_AnyCPU.xap" Timestamp="8/17/2015 12:38:47 PM" />
+    <ApplicationIconPath Path="" />
+    <SymbolPaths>
+      <Path Value="Bin\Debug\" />
+    </SymbolPaths>
+  </TargetApplication>
+  <Settings>
+    <Probe Name="Visual">
+      <CollectElementLevelCosting Enabled="True" />
+      <CollectSnapshots Enabled="True" Interval="1000" Resampling="2" />
+      <CollectMediaEvents Enabled="False" />
+      <CollectCacheDetails Enabled="False" />
+    </Probe>
+    <Probe Name="Code">
+      <SampleCallStack Enabled="True" Depth="4294967295" Interval="10" />
+      <CollectPerformanceCounters Enabled="False" />
+    </Probe>
+    <Probe Name="Memory">
+      <MemoryCallStack Enabled="False" Depth="4294967295" />
+      <ObjectTree Enabled="False" Interval="10" />
+    </Probe>
+  </Settings>
+  <Data>
+    <Logs>
+      <File Type="NativeFormat" Path="PerfLogs\LiveLowCarbApp3478442443\tmp640D.spl" />
+      <File Type="SRUMData" Path="PerfLogs\LiveLowCarbApp3478442443\tmp640E.srum" />
+    </Logs>
+  </Data>
+  <TargetDeviceSettings OSVersion="10.0.12671" AvailablePhysicalMemoryAtStartup="0" ProcessorArchitectureType="Intel" ProcessorInformation="X86" IsEmulator="True" />
+</ProfilerSession>

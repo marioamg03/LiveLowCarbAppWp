@@ -1,0 +1,180 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    x:Class="LiveLowCarbApp.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Img/fondo lineal.png"/>
+        </Grid.Background>
+
+        <phone:Panorama HorizontalAlignment="Left" Height="705" Title="" VerticalAlignment="Top" Width="520" Margin="0,65,-40,0" FontFamily="Segoe WP">
+            <phone:PanoramaItem CacheMode="{x:Null}" Header="" Height="565">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid x:Name="Alerta">
+                    <Grid.Background>
+                        <ImageBrush Stretch="Fill"/>
+                    </Grid.Background>
+
+                    <Image Margin="13,320,17,153" Source="Img/fat-01.png" Stretch="Fill"/>
+                    <TextBlock x:Name="txt3" HorizontalAlignment="Left" Margin="128,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFEAAC19" FontWeight="Bold"/>
+
+
+                    <Image Margin="13,163,17,310" Source="Img/carbs-01.png" Stretch="Fill"/>
+                    <TextBlock x:Name="txt4" HorizontalAlignment="Left" Margin="128,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFEAAC19" FontWeight="Bold"/>
+
+                    <Image Margin="13,243,17,230" Source="Img/protein-01.png" Stretch="Fill" d:LayoutOverrides="VerticalAlignment"/>
+
+                    <Image Margin="13,0,17,76" Source="Img/calories-01.png" Stretch="Fill" Height="56" VerticalAlignment="Bottom"/>
+
+                    <Image Margin="13,85,17,388" Source="Img/food-s-01.png" Stretch="Fill"/>
+
+                    <Image Margin="13,-13,17,486" Source="Img/busqueda.png" Stretch="Fill"/>
+                    <Button x:Name="Button1" HorizontalAlignment="Left" Height="80" Margin="327,-27,0,0" VerticalAlignment="Top" Width="130" BorderBrush="{x:Null}" Click="Button1_Click_1" FontWeight="Bold" FontSize="26.667" Foreground="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Img/lupa-01.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+
+
+
+
+                    <toolkit:AutoCompleteBox x:Name="acBox" FilterMode="StartsWith" ValueMemberBinding="{Binding Name}" Margin="6,-25,106,478" FontFamily="Segoe WP">
+                        <toolkit:AutoCompleteBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </toolkit:AutoCompleteBox.ItemTemplate>
+                    </toolkit:AutoCompleteBox>
+                    
+
+
+
+
+
+
+
+
+
+
+
+                    <TextBlock x:Name="txt2" HorizontalAlignment="Left" Margin="128,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFEAAC19" FontWeight="Bold"/>
+                    <TextBlock x:Name="txt5" HorizontalAlignment="Left" Margin="128,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFEAAC19" FontWeight="Bold"/>
+                    <TextBlock x:Name="Based" HorizontalAlignment="Left" Height="28" Margin="150,52,0,0" TextWrapping="Wrap" Text="Based on 100g (3.5 oz)" VerticalAlignment="Top" Width="272" FontWeight="Bold" TextAlignment="Right"/>
+
+                    <Slider x:Name="slider" VerticalAlignment="Bottom" Margin="-12,0,0,-86" Height="86" Foreground="#FFED1C24" Maximum="290" ValueChanged="slider_ValueChanged" Minimum="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <toolkit:ToggleSwitch x:Name="tEvents" IsChecked="True" Checked="tEventsChecked" Unchecked="tEventsUnchecked" Margin="299,453,10,-29" SwitchForeground="#ED1C24" Content="g" FontWeight="Bold"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ScrollViewer HorizontalAlignment="Left" Height="52" Margin="118,85,0,0" VerticalAlignment="Top" Width="325">
+                        <Grid Height="77" Width="319">
+                            <TextBlock x:Name="txt1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFEAAC19" FontWeight="Bold"/>
+                        </Grid>
+                    </ScrollViewer>
+
+                    <Image x:Name="rojo" HorizontalAlignment="Left" Height="802" Margin="-12,-69,-12,-204" VerticalAlignment="Top" Width="480" Source="Img/pantalla1.png" DoubleTap="rojo_DoubleTap" d:IsHidden="True"/>
+                    <Image x:Name="amarillo" HorizontalAlignment="Left" Height="802" Margin="-12,-69,-12,-204" VerticalAlignment="Top" Width="480" Source="Img/pantalla2.png" DoubleTap="amarillo_DoubleTap" d:IsHidden="True"/>
+                    <Image x:Name="verde" HorizontalAlignment="Left" Height="802" Margin="-12,-69,-12,-204" VerticalAlignment="Top" Width="480" Source="Img/pantalla3.png" DoubleTap="verde_DoubleTap" d:IsHidden="True"/>
+
+                    <TextBlock x:Name="TextAlert" Margin="-10,376,-8,72" TextAlignment="Center" FontSize="40" FontFamily="/LiveLowCarbApp;component/Fonts/Fonts.zip#Andy" d:IsHidden="True" />
+
+
+                </Grid>
+            </phone:PanoramaItem>
+            <phone:PanoramaItem CacheMode="{x:Null}" Header="Gadgets" Height="565" Orientation="Horizontal">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <ScrollViewer HorizontalAlignment="Left" Height="491" Margin="-5,-50,0,0" VerticalAlignment="Top" Width="465">
+                    <Grid Height="491" Width="463">
+                        <Rectangle HorizontalAlignment="Left" Height="120" Margin="6,14,0,0" VerticalAlignment="Top" Width="120">
+                            <Rectangle.Fill>
+                                <ImageBrush Stretch="Fill" ImageSource="Img/imb.png"/>
+                            </Rectangle.Fill>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                    <ec:NavigateToPageAction TargetPage="/MiniApp1.xaml"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Rectangle>
+                        <Rectangle HorizontalAlignment="Left" Height="120" Margin="6,190,0,0" VerticalAlignment="Top" Width="120">
+                            <Rectangle.Fill>
+                                <ImageBrush Stretch="Fill" ImageSource="Img/icc.png"/>
+                            </Rectangle.Fill>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                    <ec:NavigateToPageAction TargetPage="/MiniApp2.xaml"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Rectangle>
+                        <Rectangle HorizontalAlignment="Left" Height="120" Margin="6,365,0,0" VerticalAlignment="Top" Width="120">
+                            <Rectangle.Fill>
+                                <ImageBrush Stretch="Fill" ImageSource="Img/imc.png"/>
+                            </Rectangle.Fill>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                    <ec:NavigateToPageAction TargetPage="/MiniApp3.xaml"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Rectangle>
+                        <TextBlock HorizontalAlignment="Left" Height="36" Margin="143,14,0,0" TextWrapping="Wrap" Text="BMR" VerticalAlignment="Top" Width="152" FontWeight="Bold"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="143,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18.667" Width="310" Height="125" Text="Basal metabolic rate or BMR for short, is a system used to calculate which is the minimum energy requirement for a human being to stay alive."/>
+                        <TextBlock HorizontalAlignment="Left" Height="36" Margin="143,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontWeight="Bold" Text="WHR"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="143,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18.667" Width="310" Height="99" Text="The waist / hip ratio (WHR) index is what you obtained by dividing the waist circumference of a person by the perimeter of your hip."/>
+                        <TextBlock HorizontalAlignment="Left" Height="36" Margin="143,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontWeight="Bold" Text="BMI"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="143,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18.667" Width="310" Height="99" Text="The body mass index (BMI) is a measure of association between the mass and size of an individual."/>
+                    </Grid>
+                </ScrollViewer>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+        <TextBlock HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" FontSize="16" Foreground="White" Text="livelowcarb.com all rigths reserved" TextAlignment="Center" Margin="40,745,0,-6"/>
+        <Image Margin="10,20,14,630" Source="Img/logo app blanco-01.png" Stretch="Fill"/>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
